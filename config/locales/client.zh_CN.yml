@@ -1,7 +1,21 @@
 zh_CN:
   js:
+    notifications:
+      question_answer_user_commented: "<span>%{username}</span> %{description}"
+      titles:
+        question_answer_user_commented: "新评论"
+      popup:
+        question_answer_user_commented: '%{username}在"%{topic}"中发表了评论 - %{site_title}'
     composer:
+      create_qa:
+        label: "创建新问答话题"
       composer_actions:
+        create_as_qa:
+          label: "新建问答话题"
+          desc: "话题会以问答格式被创建"
+        remove_as_qa:
+          label: "新建普通话题"
+          desc: "话题会以普通格式被创建"
         reply_to_question:
           label: 回答这个问题
           desc: 在第一个帖子中回答这个问题
@@ -9,7 +23,7 @@ zh_CN:
           label: 评论 %{postUsername} 的答案
           desc: 评论答案
         comment_on_entry:
-          label: 评论 ${postUsername} 的条目
+          label: 评论 %{postUsername} 的条目
           desc: 评论一个条目
     post:
       actions:
@@ -18,38 +32,64 @@ zh_CN:
         people:
           vote: "投票"
         by_you:
-          vote: "你为这个答案投票了"
+          vote: "您为这个答案投票了"
         by_you_and_others:
           vote:
-            one: "你和另外一个人投票给了这个答案"
-            other: "你和 {{count}} 个人投票给了这个答案"
-
+            one: "您和另外一个人投票给了这个答案"
+            other: "您和%{count}个人投票给了这个答案"
         by_others:
           vote:
-            one: "1 个人投票给了这个答案"
-            other: "{{count}} 个人投票给了这个答案"
-
-    topic:
-      answer:
-        title: '答案'
-        help: '为这个问题添加答案'
+            one: "1个人投票给了这个答案"
+            other: "%{count}个人投票给了这个答案"
+    vote:
+      already_voted: "每个问题您只能投票一次。"
+      user_over_limit: "您不能超出您的信任等级允许的投票次数。"
+      one_vote_per_post: "每个答案您只能投票一次。"
+    last_answer_lowercase: "最后答案"
+    answer_lowercase:
+      one: "答案"
+      other: "答案"
+    qa:
+      post:
+        qa_comment:
+          composer:
+            too_short:
+              one: "输入至少%{count}个字符"
+              other: "输入至少%{count}个字符"
+            length_ok:
+              one: "剩余%{count}个字符..."
+              other: "剩余%{count}个字符..."
+            too_long:
+              one: "评论不能超过%{count}个字符"
+              other: "评论不能超过%{count}个字符"
+          submit: "添加评论"
+          edit: "编辑"
+          cancel: "取消"
+          add: "添加评论"
+          show:
+            one: "显示%{count}条其它评论"
+            other: "显示%{count}条其它评论"
+          delete:
+            confirm: "您确定要删除这条评论吗?"
+      topic:
+        answer:
+          label: "答案"
+          help: "回答这个问题"
+        sort_by: "排序："
+        votes: "票数"
+        activity: "活动"
+        answer_count:
+          one: "%{count}个答案"
+          other: "%{count}个答案"
       comment:
-        title: '评论'
-        help: '为这个答案添加评论'
+        title: "评论"
+        help: "添加评论"
         show_comments:
-          all: '显示 {{count}} 条评论'
-          more: '显示 {{count}} 条更多评论'
+          all: "显示%{count}条评论"
+          more: "显示%{count}条其它评论"
       tip:
         qa:
           title: "问题"
           details: "用户可以给最佳回答投票。
                     <ul><li>每人只有一票。</li>
                     <li>回答以得票数排序。</li></ul>"
-
-    vote:
-      already_voted: "每个问题您只能投票一次。"
-
-    last_answer_lowercase: 最后答案
-    answer_lowercase:
-      one: 答案
-      other: 答案
